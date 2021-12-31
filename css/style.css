@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Pushster&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+/* 
+font-family: 'Pushster', cursive;
+font-family: 'Roboto', sans-serif;
+/* 3b8cd1 */
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background: #e2eeff;
+}
+
+.calendar {
+    user-select: none;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding: 0px 40px;
+}
+.calendar-header {
+    display: flex;
+    padding: 30px 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar-header table{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.calendar-header table th{
+    cursor: pointer;
+    color: #3b8cd1;
+}
+.calendar-header table .prev, 
+.calendar-header table .next {
+    width: 40px;
+    font-size: 36px;
+    font-weight: bold;
+}
+.calendar-header table .year-title {
+    font-size: 66px;
+    padding: 10px 30px;
+    font-family: 'Pushster', cursive;
+    transition: all 0.2s ease;
+}
+.calendar-header table .year-title:hover {
+    opacity: 0.9;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px 0px #3b8cd1;
+}
+.calendar-header table .year-title.year-neighbor {
+    font-size: 36px;
+}
+.calendar-header table .year-title.year-neighbor2 {
+    font-size: 20px;
+}
+
+
+.calendar-header table .year-title.active{
+    background: #000;
+}
+
+.months-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.months-container .month-container {
+    width: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 330px;
+    margin-bottom: 24px;
+    box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.25);
+    background: transparent;
+    border-radius: 8px;
+}
+
+.months-container .month-container.active{
+    background: #000;
+}
+
+.months-container .month-container .month {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 14px 30px;
+}
+.months-container .month-container .month thead {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.months-container .month-container .month thead tr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.months-container .month-container .month thead tr:first-child{
+    justify-content: center;
+}
+.months-container .month-container .month thead .month-title {
+    font-size: 34px;
+    color: #ff66ec;
+    font-family: 'Pushster', cursive;
+    padding-bottom: 12px;
+}
+.months-container .month-container .month thead .day-header {
+    font-size: 18px;
+    padding: 10px 0;
+    font-family: 'Pushster', cursive;
+    font-weight: 600;
+    color: #ff66ec;
+    width: 34px;
+}
+.months-container .month-container .month thead .day-header:first-child,
+.months-container .month-container .month thead .day-header:last-child{
+    color: #3b8cd1;
+}
+
+.months-container .month-container .month tr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.months-container .month-container .month tr .day {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-family: 'Pushster', cursive;
+    font-weight: 600;
+    color: #ff66ec;
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+.months-container .month-container .month tr .day:hover {
+    opacity: .8;
+}
+
+.months-container .month-container .month tr .day:first-child,
+.months-container .month-container .month tr .day:last-child{
+    color: #3b8cd1;
+}
+
+
+.months-container .month-container .month tr .day.active{
+    background: #fff;
+}
